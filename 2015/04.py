@@ -1,7 +1,7 @@
-from cgitb import text
-import hashlib
+import hashlib, datetime
 
 # 1st part
+start = datetime.datetime.now()
 
 s_key = "bgvyzdsv"
 
@@ -15,7 +15,9 @@ def find_5_zeros(key):
         secret_key = key + str(x)
         if '00000'in hash_number(secret_key)[0:5]:
             print(x)
-            quit()
+            break
 
 
 find_5_zeros(s_key)
+
+print("Runtime: {0}".format(datetime.datetime.now()-start))
