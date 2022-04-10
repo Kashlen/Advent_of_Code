@@ -21,3 +21,14 @@ def find_5_zeros(key):
 find_5_zeros(s_key)
 
 print("Runtime: {0}".format(datetime.datetime.now()-start))
+
+# 2nd part
+
+def find_6_zeros(key):
+    for x in range(10000000):
+        secret_key = key + str(x)
+        if '000000'in hash_number(secret_key)[0:6]:
+            print(x)
+            break
+
+find_6_zeros(s_key)
