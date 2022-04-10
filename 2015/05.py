@@ -23,11 +23,9 @@ def has_3_vowels(string):
         return False
             
 def has_double_letters(string):
-    letters = list(string)
-    for x in letters:
+    for x in string:
         if x+x in string:
             return True
-    
     else:
         return False
 
@@ -52,4 +50,35 @@ how_many_nice(strings)
 
 print("Runtime: {0}".format(datetime.datetime.now()-start))
 
+
+
 # 2nd part
+
+def has_double_letters_twice(string):
+    for x in range(0, len(string)-1):
+        for y in range(x+2, len(string)-1):
+            if string[x:x+2] == string[y:y+2]:
+                return True
+    else:
+        return False
+
+def has_xyx_alike_string(string):
+    for x in string:
+        for y in string:
+            if x+y+x in string:
+                return True
+    else:
+        return False
+
+
+def how_many_new_nice(data):
+    nice_strings = list()
+    for string in data:
+        if has_double_letters_twice(string) and has_xyx_alike_string(string):
+            nice_strings.append(string)
+    print(len(nice_strings))
+
+how_many_new_nice(strings)
+
+#It contains a pair of any two letters that appears at least twice in the string without overlapping, like xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
+#It contains at least one letter which repeats with exactly one letter between them, like xyx, abcdefeghi (efe), or even aaa.
