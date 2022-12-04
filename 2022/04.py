@@ -5,19 +5,6 @@ pairs = []
 for item in data:
     pairs.append(item.split(","))
 
-full_list_of_sections = []
-for part in pairs:
-    elf_1 = range(int((part[0].split("-"))[0]), int((part[0].split("-"))[1])+1)
-    elf_2 = range(int((part[1].split("-"))[0]), int((part[1].split("-"))[1])+1)
-    list_1 = []
-    for n in elf_1:
-        list_1.append(n)
-    list_2 = []
-    for m in elf_2:
-        list_2.append((m))
-    list_of_two = [list_1, list_2]
-    full_list_of_sections.append(list_of_two)
-
 
 "PUZZLE no. 1"
 
